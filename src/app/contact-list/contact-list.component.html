@@ -12,10 +12,13 @@
       <tr *ngFor="let contact of contacts">
 
         <td>{{ contact.id }}</td>
-        <td> {{ contact.name }}</td>
-        <td> {{ contact.email }}</td>
+        <td> {{ contact.origin }}</td>
+        <td> {{ contact.dest }}</td>
+        <td> {{ contact.date }}</td>
+        <td> {{ contact.numTrav }}</td>
+        <td> {{ contact.submitted }}</td>
         <td>
-          <button class="btn btn-primary" (click)="selectContact(contact)"> Show details</button>
+          <button class="btn btn-primary" (click)="selectContact(contact)"> Show Price</button>
         </td>
       </tr>
     </tbody>
@@ -25,9 +28,9 @@
         # {{selectedContact.id}}
       </div>
       <div class="card-block">
-        <h4 class="card-title">{{selectedContact.name}}</h4>
+        <h4 class="card-title">{{selectedContact.origin + ' to ' + selectedContact.dest}}</h4>
         <p class="card-text">
-          {{selectedContact.description}}
+          {{'Price: ' + selectedContact.price}}
         </p>
       </div>
 

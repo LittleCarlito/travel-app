@@ -6,18 +6,22 @@ import { Injectable } from '@angular/core';
 export class DataService {
 
   contacts = [
-    {id: 1, name: "Contact 001", description: "Contact 001 des", email: "c001@email.com"},
-    {id: 2, name: "Contact 002", description: "Contact 002 des", email: "c002@email.com"},
-    {id: 3, name: "Contact 003", description: "Contact 003 des", email: "c003@email.com"},
-    {id: 4, name: "Contact 004", description: "Contact 004 des", email: "c004@email.com"}
+    {id: 1, origin: 'MKE', dest: 'ORD', date: '10/02/2020', numTrav: 1, submitted: '01/11/2019', price: null},
+    {id: 2, origin: 'MKE', dest: 'ORD', date: '10/02/2020', numTrav: 2, submitted: '01/11/2019', price: null},
+    {id: 3, origin: 'MKE', dest: 'ORD', date: '10/02/2020', numTrav: 3, submitted: '01/11/2019', price: null},
+    {id: 4, origin: 'MKE', dest: 'ORD', date: '10/02/2020', numTrav: 4, submitted: '01/11/2019', price: null}
   ];
 
-  constructor() { }
+  constructor() {
+    for (const contact of this.contacts) {
+      contact.price = (contact.numTrav * 150);
+    }
+  }
 
-  public getContacts():Array<{id, name, description, email}>{
+  public getContacts(): Array<{id, origin, dest, date, numTrav, submitted, price}>{
     return this.contacts;
   }
-  public createContact(contact: {id, name, description, email}){
+  public createContact(contact: {id, origin, dest, date, numTrav, submitted, price}): void{
     this.contacts.push(contact);
   }
 }
