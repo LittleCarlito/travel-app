@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "travel-app": {
+    "angular-bootstrap-demo": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,23 +13,20 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/travel-app",
+            "outputPath": "dist/angular-bootstrap-demo",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
             "aot": true,
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ],
+            "assets": ["src/favicon.ico", "src/assets"],
             "styles": [
               "src/styles.css",
-              "node_modules/boostrap/dist/css/boostrap.min.css"
+              "node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
             "scripts": [
               "node_modules/jquery/dist/jquery.min.js",
-              "node_modules/boostrap/dist/js/boostrap.min.js"
+              "node_modules/bootstrap/dist/js/bootstrap.min.js"
             ]
           },
           "configurations": {
@@ -66,18 +63,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "travel-app:build"
+            "browserTarget": "angular-bootstrap-demo:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "travel-app:build:production"
+              "browserTarget": "angular-bootstrap-demo:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "travel-app:build"
+            "browserTarget": "angular-bootstrap-demo:build"
           }
         },
         "test": {
@@ -87,13 +84,8 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ],
-            "styles": [
-              "src/styles.css"
-            ],
+            "assets": ["src/favicon.ico", "src/assets"],
+            "styles": ["src/styles.css"],
             "scripts": []
           }
         },
@@ -105,24 +97,23 @@
               "tsconfig.spec.json",
               "e2e/tsconfig.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         },
         "e2e": {
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "travel-app:serve"
+            "devServerTarget": "angular-bootstrap-demo:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "travel-app:serve:production"
+              "devServerTarget": "angular-bootstrap-demo:serve:production"
             }
           }
         }
       }
-    }},
-  "defaultProject": "travel-app"
+    }
+  },
+  "defaultProject": "angular-bootstrap-demo"
 }
