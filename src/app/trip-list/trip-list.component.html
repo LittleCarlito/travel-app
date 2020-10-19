@@ -1,0 +1,41 @@
+<div class="container" style="margin-top: 70px;">
+  <h2>Currently planned trips</h2>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th style="text-align:center">Origin</th>
+        <th style="text-align:center">Destination</th>
+        <th>Travel Date</th>
+        <th style="text-align:center"># of Travelers</th>
+        <th>Date Submitted</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let trip of trips">
+
+        <td>{{ trip.id }}</td>
+        <td style="text-align:center"> {{ trip.origin }}</td>
+        <td style="text-align:center"> {{ trip.dest }}</td>
+        <td> {{ trip.date }}</td>
+        <td style="text-align:center"> {{ trip.numTrav }}</td>
+        <td> {{ trip.submitted }}</td>
+        <td>
+          <button class="btn btn-primary" (click)="selecttrip(trip)"> Show Price</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="card text-center" *ngIf="selectedtrip">
+      <div class="card-header">
+        # {{selectedtrip.id}}
+      </div>
+      <div class="card-block">
+        <h4 class="card-title">{{selectedtrip.origin + ' to ' + selectedtrip.dest}}</h4>
+        <p class="card-text">
+          {{'Price: ' + selectedtrip.price}}
+        </p>
+      </div>
+
+    </div>
+</div>
